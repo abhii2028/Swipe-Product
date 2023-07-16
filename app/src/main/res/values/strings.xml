@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Swipe Product</string>
+    <string name="type_your_text">Type your text to find …</string>
+    <string name="no_internet_connection">No Internet Connection!</string>
+    <string name="invalid_data">Enter valid data</string>
+    <string name="add_product">Add Product</string>
+    <string name="add">Add</string>
+    <string name="back">Back</string>
+    <string name="enter_name">Enter Name…</string>
+    <string name="enter_type">Enter Type…</string>
+    <string name="enter_price">Enter Price…</string>
+    <string name="enter_tax">Enter Tax…</string>
+    <string name="search_here">Search product…</string>
+</resources>

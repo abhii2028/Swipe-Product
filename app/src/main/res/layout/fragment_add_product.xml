@@ -1,0 +1,158 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+                android:id="@+id/nsv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:overScrollMode="never"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tvBack"
+                >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivImage"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:src="@drawable/ic_image"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_edt"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        app:layout_constraintBottom_toTopOf="@id/edtName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edt"
+                        android:hint="@string/enter_name"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/atlantic"
+                        android:gravity="start|center"
+                        android:padding="@dimen/_6sdp"
+                        android:maxLines="1"
+                        android:inputType="textCapWords"
+                        android:nextFocusDown="@id/edtType"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginHorizontal="8sp"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivImage"
+                        app:layout_constraintBottom_toTopOf="@id/edtType"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/edtType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edt"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/atlantic"
+                        android:gravity="start|center"
+                        android:paddingVertical="@dimen/_8sdp"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="@id/edtName"
+                        app:layout_constraintEnd_toEndOf="@id/edtName"
+                        app:layout_constraintTop_toBottomOf="@id/edtName"
+                        app:layout_constraintBottom_toTopOf="@id/edtPrice"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edt"
+                        android:hint="@string/enter_price"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/atlantic"
+                        android:gravity="start|center"
+                        android:padding="@dimen/_6sdp"
+                        android:maxLines="1"
+                        android:maxLength="6"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/edtTax"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="@id/edtType"
+                        app:layout_constraintEnd_toEndOf="@id/edtType"
+                        app:layout_constraintTop_toBottomOf="@id/edtType"
+                        app:layout_constraintBottom_toTopOf="@id/edtTax"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edtTax"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edt"
+                        android:hint="@string/enter_tax"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/atlantic"
+                        android:gravity="start|center"
+                        android:padding="@dimen/_6sdp"
+                        android:maxLines="1"
+                        android:maxLength="6"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/tvAdd"
+                        android:textCursorDrawable="@null"
+                        android:layout_marginVertical="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="@id/edtPrice"
+                        app:layout_constraintEnd_toEndOf="@id/edtPrice"
+                        app:layout_constraintTop_toBottomOf="@id/edtPrice"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:fontFamily="@font/atlantic"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/back"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintTop_toBottomOf="@id/nsv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvAdd"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAdd"
+                android:fontFamily="@font/atlantic"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/add"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintTop_toTopOf="@id/tvBack"
+                app:layout_constraintBottom_toBottomOf="@id/tvBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
