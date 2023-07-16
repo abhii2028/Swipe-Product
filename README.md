@@ -1,4 +1,5 @@
 # Android-Clean-Arch-Coroutines-Koin
+### Swipe-Interview Product
 
 A Simple Android Mobile Application which has been implemented using Clean Architecture alongside MVVM design.
 
@@ -42,4 +43,4 @@ android versions targeted:
 
 
 ## Author
-@prustA
+@prustyA
